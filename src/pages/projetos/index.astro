@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('projetos')).sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
@@ -29,5 +30,17 @@ const posts = (await getCollection('projetos')).sort((a, b) => a.data.pubDate.va
 				))
 			}
 		</ul>
+	</section>
+
+	<section class="grid items-center justify-center gap-8">
+		{
+			posts.map((post) => (
+				<Card
+					title={post.data.title}
+					description={post.data.description}
+					slug={post.slug}
+				/>
+			))
+		}
 	</section>
 </Layout>
