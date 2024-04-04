@@ -14,7 +14,7 @@ const projetos = defineCollection({
 				})
 			)
 			.optional(),
-		heroImage: z.string().optional()
+		heroImage: z.string()
 	})
 });
 
