@@ -28,7 +28,7 @@ const projetos = await getCollection('projetos');
 
 	<section class="grid gap-8">
 		<h1 class="text-4xl">Projetos</h1>
-		<ul class="grid grid-cols-2 gap-8">
+		<ul class="grid grid-cols-1 gap-8 md:grid-cols-2">
 			{
 				projetos.map((projeto) => (
 					<>
