@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const foda = navigator.language;
 ---
+
+<script>
+	console.log(navigator.languages);
+</script>
 
 <Layout>
 	<section class="mx-auto flex items-center gap-6">
@@ -24,7 +26,6 @@ const foda = navigator.language;
 			<li>Computação em Nuvem</li>
 		</ul>
 	</section>
-	<h1 class="text-4xl font-bold text-red-600">{foda}</h1>
 	<section>
 		<p>
 			Com o aumento na demanda por serviços disponibilizados através de sistemas embarcados (e.g., tablets e
