@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: import.meta.env.MODE === 'development' ? 'http://localhost:4321' : 'https://lospampa.vercel.app',
+	site: 'https://lospampa.vercel.app',
 	integrations: [mdx(), sitemap(), tailwind()],
 	i18n: {
 		locales: ['en', 'br'],
