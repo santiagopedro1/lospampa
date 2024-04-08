@@ -6,6 +6,14 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [mdx(), sitemap(), tailwind()]
+	site: import.meta.env.MODE === 'development' ? 'http://localhost:4321' : 'https://lospampa.vercel.app',
+	integrations: [mdx(), sitemap(), tailwind()],
+	i18n: {
+		locales: ['en', 'br'],
+		defaultLocale: 'en',
+		routing: {
+			prefixDefaultLocale: true,
+			redirectToDefaultLocale: false
+		}
+	}
 });

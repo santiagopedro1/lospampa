@@ -2,10 +2,15 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+const { pathname } = Astro.url;
+
+const lang = pathname.split('/')[1];
+const seila = lang === 'en' ? 'en-US' : 'pt-BR';
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang={seila}>
 	<head>
 		<BaseHead
 			title={SITE_TITLE}
@@ -13,7 +18,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		/>
 	</head>
 	<body>
-		<Header />
+		<Header lang={lang} />
 		<main class="grid gap-12 px-4 py-8 md:px-48">
 			<slot />
 		</main>

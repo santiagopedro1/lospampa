@@ -1,12 +1,40 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const lang = Astro.currentLocale || 'en';
+
+const langLinks = {
+	br: [
+		{ label: 'Projetos', href: 'projetos' },
+		{ label: 'Publicações', href: 'publicacoes' }
+	],
+	en: [
+		{ label: 'Projects', href: 'projects' },
+		{ label: 'Publications', href: 'publications' }
+	]
+};
 ---
 
-<header class="mb-6 px-12 py-4">
+<script is:inline>
+	document.addEventListener('DOMContentLoaded', function () {
+		const selectElement = document.getElementById('lang');
+		selectElement.addEventListener('change', function () {
+			const selectedValue = selectElement.value;
+			// get path and change the first part of it to the selected language
+			const path = window.location.pathname;
+			const newPath = path.replace(/^\/[a-z]{2}/, `/${selectedValue}`);
+			window.location.assign(newPath);
+		});
+	});
+</script>
+
+<header class="relative mb-6 px-12 py-4">
 	<nav class="relative flex items-center justify-center">
 		<a
-			href="/"
+			href={getRelativeLocaleUrl(lang)}
 			class="absolute left-0 flex items-center gap-1 px-4 py-2"
 		>
 			<img
@@ -17,8 +45,29 @@ import { SITE_TITLE } from '../consts';
 			<h1 class="font-bold">{SITE_TITLE}</h1>
 		</a>
 		<div class="space-x-2">
-			<HeaderLink href="/projetos">Projetos</HeaderLink>
-			<HeaderLink href="/publicacoes">Publicações</HeaderLink>
+			{
+				langLinks[lang as keyof typeof langLinks].map(({ label, href }) => (
+					<HeaderLink href={getRelativeLocaleUrl(lang, href)}>{label}</HeaderLink>
+				))
+			}
+		</div>
+		<div class="absolute right-4">
+			<select
+				name="lang"
+				id="lang"
+				class="px-2 py-1"
+			>
+				<option
+					value="br"
+					selected={lang === 'br'}
+					>Português-BR</option
+				>
+				<option
+					value="en"
+					selected={lang === 'en'}
+					>English</option
+				>
+			</select>
 		</div>
 	</nav>
 </header>
