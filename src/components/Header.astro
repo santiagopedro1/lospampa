@@ -1,31 +1,35 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import { SITE_TITLE, langLinks } from '@src/consts';
 
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
 const lang = Astro.currentLocale || 'en';
-
-const langLinks = {
-	br: [
-		{ label: 'Projetos', href: 'projetos' },
-		{ label: 'Publicações', href: 'publicacoes' }
-	],
-	en: [
-		{ label: 'Projects', href: 'projects' },
-		{ label: 'Publications', href: 'publications' }
-	]
-};
 ---
 
 <script is:inline>
+	const langLinks = {
+		br: ['projetos', 'publicacoes'],
+		en: ['projects', 'publications']
+	};
 	document.addEventListener('DOMContentLoaded', function () {
 		const selectElement = document.getElementById('lang');
+		const brLinks = langLinks.br;
+		const enLinks = langLinks.en;
+
 		selectElement.addEventListener('change', function () {
 			const selectedValue = selectElement.value;
-			// get path and change the first part of it to the selected language
 			const path = window.location.pathname;
-			const newPath = path.replace(/^\/[a-z]{2}/, `/${selectedValue}`);
+			let newPath = path.replace(/^\/[a-z]{2}/, `/${selectedValue}`);
+			if (selectedValue === 'br') {
+				enLinks.forEach((link, index) => {
+					newPath = newPath.replace(new RegExp(link, 'g'), brLinks[index]);
+				});
+			} else {
+				brLinks.forEach((link, index) => {
+					newPath = newPath.replace(new RegExp(link, 'g'), enLinks[index]);
+				});
+			}
 			window.location.assign(newPath);
 		});
 	});
