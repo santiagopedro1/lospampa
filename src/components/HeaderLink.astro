@@ -14,9 +14,9 @@ const isActive = pathname === link;
 <a
 	href={href}
 	class:list={[
-		'border-b-4 border-transparent px-4 py-2 hover:bg-black hover:bg-opacity-10',
+		'border-b-4 border-transparent px-4 py-2 hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black',
 		className,
-		isActive && '!border-green-700 font-extrabold'
+		isActive && '!border-green-500 font-extrabold'
 	]}
 	{...props}
 >

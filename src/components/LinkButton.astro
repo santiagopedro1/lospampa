@@ -9,7 +9,7 @@ const { name, url }: Props = Astro.props;
 
 <a
 	href={url}
-	class="flex w-fit items-center justify-center gap-2 rounded-full border-2 border-black px-4 py-2 text-lg transition duration-200 hover:bg-black hover:text-white"
+	class="flex w-fit items-center justify-center gap-2 rounded-full border-2 border-black px-4 py-2 text-lg transition duration-200 hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black"
 >
 	{
 		name === 'Github' ? (

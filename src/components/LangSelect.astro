@@ -47,17 +47,25 @@ const langs = {
 			});
 		});
 
-		langButton.addEventListener('click', () => {
+		langButton.addEventListener('focus', () => {
 			const langList = document.getElementById('lang-list');
 			langList.classList.toggle('hidden');
 			langList.classList.toggle('flex');
+		});
+		// Close the dropdown when the user clicks outside of it
+		window.addEventListener('click', function (event) {
+			const langList = document.getElementById('lang-list');
+			if (!langList.contains(event.target) && event.target !== langButton) {
+				langList.classList.add('hidden');
+				langList.classList.remove('flex');
+			}
 		});
 	});
 </script>
 
 <div class="text-base">
 	<button
-		class="flex items-center gap-1 rounded-lg bg-black px-3 py-1.5 text-white"
+		class="flex items-center gap-1 rounded-lg bg-black px-3 py-1.5 text-white shadow-lg dark:bg-white dark:text-black"
 		id="lang-button"
 	>
 		<svg
@@ -80,7 +88,7 @@ const langs = {
 	</button>
 	<ul
 		id="lang-list"
-		class="absolute hidden flex-col gap-4 rounded-lg bg-black p-1 text-sm text-white shadow-lg"
+		class="absolute hidden flex-col gap-4 rounded-lg bg-black p-1 text-sm text-white shadow-lg dark:bg-white dark:text-black"
 	>
 		{
 			Object.entries(langs).map(([lang, { text }]) => {

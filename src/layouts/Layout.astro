@@ -1,6 +1,6 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
+import BaseHead from '@components/BaseHead.astro';
+import Header from '@components/Header.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '@src/consts';
 
 const { pathname } = Astro.url;
@@ -17,7 +17,7 @@ const seila = lang === 'en' ? 'en-US' : 'pt-BR';
 			description={SITE_DESCRIPTION}
 		/>
 	</head>
-	<body>
+	<body class="bg-white text-black dark:bg-emerald-950 dark:text-white">
 		<Header lang={lang} />
 		<main class="grid gap-12 px-4 py-8 md:px-48">
 			<slot />
