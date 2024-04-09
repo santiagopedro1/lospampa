@@ -6,7 +6,7 @@ links:
     { name: 'Github', url: 'https://github.com/lopesvictor1/PampaBox' },
     { name: 'Instagram', url: 'https://www.instagram.com/pampabox/' }
   ]
-heroImage: '/images.png'
+heroImage: '/images.webp'
 ---
 
 ## Visão Geral

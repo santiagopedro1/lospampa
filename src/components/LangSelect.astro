@@ -67,6 +67,7 @@ const langs = {
 	<button
 		class="flex items-center gap-1 rounded-lg bg-black px-3 py-1.5 text-white shadow-lg dark:bg-white dark:text-black"
 		id="lang-button"
+		aria-label="Change language"
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
@@ -97,6 +98,7 @@ const langs = {
 						<li>
 							<button
 								id="lang"
+								aria-label={`Change language to ${text}`}
 								value={lang}
 								class="rounded-lg px-3 py-1.5 hover:bg-white hover:bg-opacity-20"
 							>
