@@ -1,0 +1,103 @@
+---
+type Props = {
+	currentLang: string;
+};
+
+const { currentLang } = Astro.props;
+
+const langs = {
+	en: {
+		text: 'English (US)'
+	},
+	br: {
+		text: 'Português (BR)'
+	}
+};
+---
+
+<script is:inline>
+	const langLinks = {
+		br: ['projetos', 'publicacoes'],
+		en: ['projects', 'publications']
+	};
+	document.addEventListener('DOMContentLoaded', function () {
+		const langButtons = document.querySelectorAll('#lang');
+		const langButton = document.getElementById('lang-button');
+
+		langButtons.forEach((button) => {
+			button.addEventListener('click', () => {
+				const lang = button.value;
+				const brLinks = langLinks.br;
+				const enLinks = langLinks.en;
+
+				const path = window.location.pathname;
+				let newPath = path.replace(/^\/[a-z]{2}/, `/${lang}`);
+
+				if (lang === 'br') {
+					enLinks.forEach((link, index) => {
+						newPath = newPath.replace(new RegExp(link, 'g'), brLinks[index]);
+					});
+				} else {
+					brLinks.forEach((link, index) => {
+						newPath = newPath.replace(new RegExp(link, 'g'), enLinks[index]);
+					});
+				}
+
+				window.location.assign(newPath);
+			});
+		});
+
+		langButton.addEventListener('click', () => {
+			const langList = document.getElementById('lang-list');
+			langList.classList.toggle('hidden');
+			langList.classList.toggle('flex');
+		});
+	});
+</script>
+
+<div class="relative">
+	<button
+		class="flex items-center gap-1 rounded-lg bg-black px-3 py-1.5 text-white"
+		id="lang-button"
+	>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			><circle
+				cx="12"
+				cy="12"
+				r="10"
+			></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path>
+		</svg>
+		{langs[currentLang as keyof typeof langs].text}
+	</button>
+	<ul
+		id="lang-list"
+		class="absolute hidden flex-col gap-4 rounded-lg bg-black p-1 text-sm text-white shadow-lg"
+	>
+		{
+			Object.entries(langs).map(([lang, { text }]) => {
+				if (lang !== currentLang) {
+					return (
+						<li>
+							<button
+								id="lang"
+								value={lang}
+								class="rounded-lg px-3 py-1.5 hover:bg-white hover:bg-opacity-20"
+							>
+								{text}
+							</button>
+						</li>
+					);
+				}
+			})
+		}
+	</ul>
+</div>

@@ -3,37 +3,10 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE, langLinks } from '@src/consts';
 
 import { getRelativeLocaleUrl } from 'astro:i18n';
+import LangSelect from './LangSelect.astro';
 
 const lang = Astro.currentLocale || 'en';
 ---
-
-<script is:inline>
-	const langLinks = {
-		br: ['projetos', 'publicacoes'],
-		en: ['projects', 'publications']
-	};
-	document.addEventListener('DOMContentLoaded', function () {
-		const selectElement = document.getElementById('lang');
-		const brLinks = langLinks.br;
-		const enLinks = langLinks.en;
-
-		selectElement.addEventListener('change', function () {
-			const selectedValue = selectElement.value;
-			const path = window.location.pathname;
-			let newPath = path.replace(/^\/[a-z]{2}/, `/${selectedValue}`);
-			if (selectedValue === 'br') {
-				enLinks.forEach((link, index) => {
-					newPath = newPath.replace(new RegExp(link, 'g'), brLinks[index]);
-				});
-			} else {
-				brLinks.forEach((link, index) => {
-					newPath = newPath.replace(new RegExp(link, 'g'), enLinks[index]);
-				});
-			}
-			window.location.assign(newPath);
-		});
-	});
-</script>
 
 <header class="relative mb-6 px-12 py-4">
 	<nav class="relative flex items-center justify-center">
@@ -56,22 +29,7 @@ const lang = Astro.currentLocale || 'en';
 			}
 		</div>
 		<div class="absolute right-4">
-			<select
-				name="lang"
-				id="lang"
-				class="px-2 py-1"
-			>
-				<option
-					value="br"
-					selected={lang === 'br'}
-					>Português-BR</option
-				>
-				<option
-					value="en"
-					selected={lang === 'en'}
-					>English</option
-				>
-			</select>
+			<LangSelect currentLang={lang} />
 		</div>
 	</nav>
 </header>
