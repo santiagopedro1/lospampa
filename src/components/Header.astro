@@ -8,11 +8,11 @@ import LangSelect from './LangSelect.astro';
 const lang = Astro.currentLocale || 'en';
 ---
 
-<header class="relative mb-6 px-12 py-4">
-	<nav class="relative flex items-center justify-center">
+<div class="border-b border-black py-3">
+	<header class="grid grid-cols-3 items-center px-12">
 		<a
 			href={getRelativeLocaleUrl(lang)}
-			class="absolute left-0 flex items-center gap-1 px-4 py-2"
+			class="flex items-center gap-1 justify-self-start px-4 py-2"
 		>
 			<img
 				src="/lospampa.png"
@@ -21,15 +21,16 @@ const lang = Astro.currentLocale || 'en';
 			/>
 			<h1 class="font-bold">{SITE_TITLE}</h1>
 		</a>
-		<div class="space-x-2">
+		<div class="space-x-2 justify-self-center">
 			{
 				langLinks[lang as keyof typeof langLinks].map(({ label, href }) => (
 					<HeaderLink href={getRelativeLocaleUrl(lang, href)}>{label}</HeaderLink>
 				))
 			}
 		</div>
-		<div class="absolute right-4">
+
+		<div class="justify-self-end">
 			<LangSelect currentLang={lang} />
 		</div>
-	</nav>
-</header>
+	</header>
+</div>

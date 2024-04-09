@@ -13,7 +13,11 @@ const isActive = pathname === link;
 
 <a
 	href={href}
-	class:list={['border-b-4 border-transparent px-4 py-2', className, isActive && '!border-green-700 font-extrabold']}
+	class:list={[
+		'border-b-4 border-transparent px-4 py-2 hover:bg-black hover:bg-opacity-10',
+		className,
+		isActive && '!border-green-700 font-extrabold'
+	]}
 	{...props}
 >
 	<slot />
