@@ -27,7 +27,11 @@ const { t } = Astro.locals;
 			<h1 class="font-bold">{SITE_TITLE}</h1>
 		</a>
 		<div class="space-x-2 justify-self-center">
-			{Object.entries(t.headerLinks).map(([key, value]) => <HeaderLink href={key}>{value}</HeaderLink>)}
+			{
+				Object.entries(t.headerLinks).map(([key, value]) => (
+					<HeaderLink href={getRelativeLocaleUrl(currentLocale, key, { normalizeLocale: false })}>{value}</HeaderLink>
+				))
+			}
 		</div>
 
 		<div class="flex gap-3 justify-self-end">

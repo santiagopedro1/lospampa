@@ -2,10 +2,14 @@
 import Layout from '@layouts/Layout.astro';
 
 import { getCollection } from 'astro:content';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
 export async function getStaticPaths() {
 	return [{ params: { lang: 'en-US' } }, { params: { lang: 'pt-BR' } }];
 }
+
+let { currentLocale } = Astro;
+currentLocale = currentLocale as 'pt-BR' | 'en-US';
 
 const { t } = Astro.locals;
 
@@ -21,7 +25,7 @@ const projetos = await getCollection('projetos');
 				projetos.map((projeto) => (
 					<>
 						<li class="group w-full rounded-xl border-2 border-transparent transition duration-200 ease-in-out hover:border-green-500">
-							<a href={'projects/' + projeto.slug}>
+							<a href={projeto.slug}>
 								<div class="space-y-4 p-4">
 									<h2 class="text-2xl font-bold group-hover:text-green-500">{projeto.data.title}</h2>
 									<p>{projeto.data.description}</p>
