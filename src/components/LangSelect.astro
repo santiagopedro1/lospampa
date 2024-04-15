@@ -63,16 +63,16 @@ const langs = {
 	});
 </script>
 
-<div class="text-base">
+<div>
 	<button
-		class="flex items-center gap-1 rounded-lg bg-black px-3 py-1.5 text-white shadow-lg dark:bg-white dark:text-black"
+		class="flex h-11 w-40 items-center justify-center gap-1 rounded-md border border-black px-3 py-2 hover:bg-black hover:text-white dark:border-white dark:hover:bg-white dark:hover:text-black"
 		id="lang-button"
 		aria-label="Change language"
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			width="24"
-			height="24"
+			width="20"
+			height="20"
 			viewBox="0 0 24 24"
 			fill="none"
 			stroke="currentColor"
@@ -89,7 +89,7 @@ const langs = {
 	</button>
 	<ul
 		id="lang-list"
-		class="absolute hidden flex-col gap-4 rounded-lg bg-black p-1 text-sm text-white shadow-lg dark:bg-white dark:text-black"
+		class="absolute mt-1 hidden flex-col bg-white p-1 text-sm text-black shadow-lg dark:bg-black dark:text-white"
 	>
 		{
 			Object.entries(langs).map(([lang, { text }]) => {
@@ -100,7 +100,7 @@ const langs = {
 								id="lang"
 								aria-label={`Change language to ${text}`}
 								value={lang}
-								class="rounded-lg px-3 py-1.5 hover:bg-white hover:bg-opacity-20"
+								class="w-40 rounded-md px-3 py-2 text-start hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
 							>
 								{text}
 							</button>
