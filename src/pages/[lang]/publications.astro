@@ -1,12 +1,18 @@
 ---
 import Layout from '@layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	return [{ params: { lang: 'en-US' } }, { params: { lang: 'pt-BR' } }];
+}
+
+const { t } = Astro.locals;
 ---
 
 <Layout>
-	<h1 class="text-4xl">Publicações</h1>
+	<h1 class="text-4xl font-bold">{t.publications.title}</h1>
 
 	<section class="grid gap-2">
-		<h2 class="text-2xl">Journal</h2>
+		<h2 class="text-2xl">{t.publications.journals}</h2>
 		<ul class="flex list-disc flex-col gap-4">
 			<li>
 				BERNED, G. P.; ROSSI, F. D.; LUIZELLI, M. C.; DE SOUZA, S. X.; BECK, A. C. S.; LORENZON, A. F.
@@ -65,7 +71,7 @@ import Layout from '@layouts/Layout.astro';
 	</section>
 
 	<section class="grid gap-2">
-		<h2 class="text-2xl">Conference</h2>
+		<h2 class="text-2xl">{t.publications.conferences}</h2>
 		<ul class="flex list-disc flex-col gap-4">
 			<li>
 				NAVARRO, A. M. ; LORENZON, A. F. ; PARRA, E. A. ; QUEROL, V. B. <b class="font-bold"
@@ -118,7 +124,8 @@ import Layout from '@layouts/Layout.astro';
 				SOUZA, P.; MARQUES, W.; CONTERATO, M. S.; LUIZELLI, M. C.; LORENZON, A. F.; FERRETO, T. C.; ROSSI, F. D.
 				<b class="font-bold"
 					>Multilevel Resource Allocation for Performance-Aware Energy-Efficient Cloud Data Centers.</b
-				> In: International Symposium on Computers and Communications (ISCC) . NY, USA: IEEE, 2019. p. 1-6.
+				>
+				In: International Symposium on Computers and Communications (ISCC) . NY, USA: IEEE, 2019. p. 1-6.
 			</li>
 			<li>
 				CONTERATO, M.; FERRETO, T. C.; ROSSI, F. D.; MARQUES, W. S.; SEVERO, P. S.
@@ -131,7 +138,8 @@ import Layout from '@layouts/Layout.astro';
 				SCHWARZROCK, J.; JORDAN, M. G.; KOROL, G.; OLIVEIRA, C. C.; LORENZON, A. F.; BECK, A. C. S.
 				<b class="font-bold"
 					>On the influence of Data Migration in Dynamic Thread Management of Parallel Applications.</b
-				> In: Brazilian Symposium on Computing Systems Engineering (SBESC), Natal-RN. Brazil. NY: IEEE, 2019. p. 1-8.
+				>
+				In: Brazilian Symposium on Computing Systems Engineering (SBESC), Natal-RN. Brazil. NY: IEEE, 2019. p. 1-8.
 			</li>
 			<li>
 				VIEIRA, A. N. C.; DE SOUZA, P. S. S.; MARQUES, W.; CONTERATO, M.; FERRETO, T. C.; LUIZELLI, M. C.; LORENZON, A.

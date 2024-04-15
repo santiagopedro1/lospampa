@@ -6,11 +6,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '@src/consts';
 const { pathname } = Astro.url;
 
 const lang = pathname.split('/')[1];
-const seila = lang === 'en' ? 'en-US' : 'pt-BR';
 ---
 
 <!doctype html>
-<html lang={seila}>
+<html lang={Astro.currentLocale}>
 	<head>
 		<BaseHead
 			title={SITE_TITLE}

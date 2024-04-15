@@ -9,11 +9,10 @@ export default defineConfig({
 	site: 'https://lospampa.vercel.app',
 	integrations: [mdx(), sitemap(), tailwind()],
 	i18n: {
-		locales: ['en', 'br'],
-		defaultLocale: 'en',
+		locales: ['en-US', 'pt-BR'],
+		defaultLocale: 'en-US',
 		routing: {
-			prefixDefaultLocale: true,
-			redirectToDefaultLocale: false
+			prefixDefaultLocale: true
 		}
 	}
 });

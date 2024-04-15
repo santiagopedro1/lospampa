@@ -1,25 +1,17 @@
 ---
-type Props = {
-	currentLang: string;
-};
-
-const { currentLang } = Astro.props;
+const { currentLocale } = Astro;
 
 const langs = {
-	en: {
+	'en-US': {
 		text: 'English (US)'
 	},
-	br: {
+	'pt-BR': {
 		text: 'Português (BR)'
 	}
 };
 ---
 
 <script is:inline>
-	const langLinks = {
-		br: ['projetos', 'publicacoes'],
-		en: ['projects', 'publications']
-	};
 	document.addEventListener('DOMContentLoaded', function () {
 		const langButtons = document.querySelectorAll('#lang');
 		const langButton = document.getElementById('lang-button');
@@ -27,21 +19,9 @@ const langs = {
 		langButtons.forEach((button) => {
 			button.addEventListener('click', () => {
 				const lang = button.value;
-				const brLinks = langLinks.br;
-				const enLinks = langLinks.en;
-
 				const path = window.location.pathname;
-				let newPath = path.replace(/^\/[a-z]{2}/, `/${lang}`);
 
-				if (lang === 'br') {
-					enLinks.forEach((link, index) => {
-						newPath = newPath.replace(new RegExp(link, 'g'), brLinks[index]);
-					});
-				} else {
-					brLinks.forEach((link, index) => {
-						newPath = newPath.replace(new RegExp(link, 'g'), enLinks[index]);
-					});
-				}
+				const newPath = lang === 'en-US' ? path.replace('pt-BR', 'en-US') : path.replace('en-US', 'pt-BR');
 
 				window.location.assign(newPath);
 			});
@@ -85,7 +65,7 @@ const langs = {
 				r="10"
 			></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path>
 		</svg>
-		{langs[currentLang as keyof typeof langs].text}
+		{langs[currentLocale as keyof typeof langs].text}
 	</button>
 	<ul
 		id="lang-list"
@@ -93,7 +73,7 @@ const langs = {
 	>
 		{
 			Object.entries(langs).map(([lang, { text }]) => {
-				if (lang !== currentLang) {
+				if (lang !== currentLocale) {
 					return (
 						<li>
 							<button

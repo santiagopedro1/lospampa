@@ -1,0 +1,35 @@
+---
+import Layout from '@layouts/Layout.astro';
+
+export async function getStaticPaths() {
+	return [{ params: { lang: 'en-US' } }, { params: { lang: 'pt-BR' } }];
+}
+
+const { t } = Astro.locals;
+---
+
+<Layout>
+	<section class="mx-auto flex items-center gap-6">
+		<img
+			src="/lospampa.png"
+			alt="lospampa logo"
+		/>
+		<div>
+			<h1 class="text-4xl">{t.hero.title}</h1>
+			<p class="text-center text-gray-500">
+				{t.hero.sub}
+			</p>
+		</div>
+	</section>
+	<section>
+		<h2 class="text-2xl">{t.currentAreas.title}</h2>
+		<ul class="mt-4 list-disc">
+			{t.currentAreas.areas.map((area: string) => <li>{area}</li>)}
+		</ul>
+	</section>
+	<section>
+		<p>
+			{t.idk}
+		</p>
+	</section>
+</Layout>
