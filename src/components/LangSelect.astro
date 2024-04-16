@@ -21,11 +21,7 @@ const langs = {
 				const lang = button.value;
 				const path = window.location.pathname;
 
-				let newPath = lang === 'en-US' ? path.replace('pt-BR', 'en-US') : path.replace('en-US', 'pt-BR');
-
-				if (newPath.endsWith('/en') || newPath.endsWith('/br')) {
-					newPath = lang === 'en-US' ? newPath.replace('/br', '/en') : newPath.replace('/en', '/br');
-				}
+				const newPath = lang === 'en-US' ? path.replace('pt-BR', 'en-US') : path.replace('en-US', 'pt-BR');
 
 				window.location.assign(newPath);
 			});
