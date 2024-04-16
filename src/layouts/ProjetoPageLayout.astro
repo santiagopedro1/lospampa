@@ -1,9 +1,10 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import type { MarkdownInstance } from 'astro';
+
 import LinkButton from '@components/LinkButton.astro';
 import Layout from '@layouts/Layout.astro';
 
-type Props = CollectionEntry<'projetos'>['data'];
+type Props = MarkdownInstance<Record<string, any>>['frontmatter'];
 
 const { title, description, links, heroImage } = Astro.props;
 ---
@@ -27,7 +28,7 @@ const { title, description, links, heroImage } = Astro.props;
 			<hr />
 			<div class="flex gap-8">
 				{
-					links?.map(({ name, url }) => (
+					links?.map(({ name, url }: { name: string; url: string }) => (
 						<LinkButton
 							name={name}
 							url={url}

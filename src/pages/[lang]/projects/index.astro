@@ -1,8 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
 
-import { getCollection } from 'astro:content';
-
 export async function getStaticPaths() {
 	return [{ params: { lang: 'en-US' } }, { params: { lang: 'pt-BR' } }];
 }
@@ -12,10 +10,8 @@ currentLocale = currentLocale as 'pt-BR' | 'en-US';
 
 const { t } = Astro.locals;
 
-const projetos = await getCollection('projetos', (projeto) => {
-	const locale = currentLocale === 'pt-BR' ? 'br.md' : 'en.md';
-	return projeto.id.endsWith(locale);
-});
+const allProjects =
+	currentLocale === 'pt-BR' ? await Astro.glob('@projetos/pt-BR/*.md') : await Astro.glob('@projetos/en-US/*.md');
 ---
 
 <Layout>
@@ -24,13 +20,13 @@ const projetos = await getCollection('projetos', (projeto) => {
 		<p>{t.projects.sub}</p>
 		<ul class="grid grid-cols-2 gap-8">
 			{
-				projetos.map((projeto) => (
+				allProjects.map((projeto) => (
 					<>
 						<li class="group w-full rounded-xl border-2 border-transparent transition duration-200 ease-in-out hover:border-green-500">
-							<a href={projeto.slug}>
+							<a href={projeto.file.split('/').pop()?.slice(0, -3)}>
 								<div class="space-y-4 p-4">
-									<h2 class="text-2xl font-bold group-hover:text-green-500">{projeto.data.title}</h2>
-									<p>{projeto.data.description}</p>
+									<h2 class="text-2xl font-bold group-hover:text-green-500">{projeto.frontmatter.title}</h2>
+									<p>{projeto.frontmatter.description}</p>
 								</div>
 							</a>
 						</li>
@@ -44,18 +40,18 @@ const projetos = await getCollection('projetos', (projeto) => {
 		<h1 class="text-4xl">Projetos</h1>
 		<ul class="grid grid-cols-1 gap-8 md:grid-cols-2">
 			{
-				projetos.map((projeto) => (
+				allProjects.map((projeto) => (
 					<>
 						<li class="group w-full rounded-xl transition duration-200 ease-in-out">
-							<a href={projeto.slug}>
+							<a href={projeto.file.split('/').pop()?.slice(0, -3)}>
 								<img
-									src={projeto.data.heroImage}
+									src={projeto.frontmatter.heroImage}
 									alt=""
 									class="w-full rounded-xl"
 								/>
 								<div class="space-y-4 p-4">
-									<h2 class="text-2xl font-bold group-hover:text-green-500">{projeto.data.title}</h2>
-									<p>{projeto.data.description}</p>
+									<h2 class="text-2xl font-bold group-hover:text-green-500">{projeto.frontmatter.title}</h2>
+									<p>{projeto.frontmatter.description}</p>
 								</div>
 							</a>
 						</li>
