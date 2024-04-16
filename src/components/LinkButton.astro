@@ -74,7 +74,21 @@ const Icon = icons.find((icon) => name.toLowerCase().includes(icon.name.toLowerC
 <a
 	href={url}
 	class="flex w-fit items-center justify-center gap-2 rounded-full border-2 border-black px-4 py-2 text-lg transition duration-200 hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black"
+	target="_blank"
 >
 	<Fragment set:html={Icon} />
 	{name}
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="24"
+		height="24"
+		viewBox="0 0 24 36"
+		fill="none"
+		stroke="currentColor"
+		stroke-width="2"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path
+			d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg
+	>
 </a>

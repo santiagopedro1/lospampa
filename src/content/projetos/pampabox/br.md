@@ -1,11 +1,7 @@
 ---
 title: 'PampaBox'
 description: 'PampaBox transforma TV Boxes apreendidas em ferramentas educacionais via Linux, oferecendo acesso à internet e conteúdo educacional.'
-links:
-  [
-    { name: 'Github', url: 'https://github.com/lopesvictor1/PampaBox' },
-    { name: 'Instagram', url: 'https://www.instagram.com/pampabox/' }
-  ]
+links: [{ name: 'Github', url: 'https://github.com/lopesvictor1/PampaBox' }]
 heroImage: '/images.webp'
 ---
 
@@ -36,4 +32,4 @@ Você pode contribuir para o PampaBox de várias maneiras:
 3. **Documentação:** Contribua para a documentação do projeto, tornando-o mais acessível para novos usuários e colaboradores.
 4. **Divulgação:** Compartilhe o projeto com sua rede para aumentar sua visibilidade e impacto.
 
-Para mais informações, visite o [repositório do projeto no Github](https://github.com/lopesvictor1/PampaBox)
+Para mais informações, visite o repositório do projeto no [Github](https://github.com/lopesvictor1/PampaBox)

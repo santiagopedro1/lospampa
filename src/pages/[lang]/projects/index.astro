@@ -2,7 +2,6 @@
 import Layout from '@layouts/Layout.astro';
 
 import { getCollection } from 'astro:content';
-import { getRelativeLocaleUrl } from 'astro:i18n';
 
 export async function getStaticPaths() {
 	return [{ params: { lang: 'en-US' } }, { params: { lang: 'pt-BR' } }];
@@ -13,7 +12,10 @@ currentLocale = currentLocale as 'pt-BR' | 'en-US';
 
 const { t } = Astro.locals;
 
-const projetos = await getCollection('projetos');
+const projetos = await getCollection('projetos', (projeto) => {
+	const locale = currentLocale === 'pt-BR' ? 'br.md' : 'en.md';
+	return projeto.id.endsWith(locale);
+});
 ---
 
 <Layout>
