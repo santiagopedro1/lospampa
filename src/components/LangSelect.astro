@@ -27,11 +27,12 @@ const langs = {
 			});
 		});
 
-		langButton.addEventListener('focus', () => {
+		langButton.addEventListener('click', () => {
 			const langList = document.getElementById('lang-list');
 			langList.classList.toggle('hidden');
 			langList.classList.toggle('flex');
 		});
+
 		// Close the dropdown when the user clicks outside of it
 		window.addEventListener('click', function (event) {
 			const langList = document.getElementById('lang-list');
@@ -45,7 +46,7 @@ const langs = {
 
 <div>
 	<button
-		class="flex h-11 w-40 items-center justify-center gap-1 rounded-md border border-black px-3 py-2 hover:bg-black hover:text-white dark:border-white dark:hover:bg-white dark:hover:text-black"
+		class="flex h-11 items-center justify-center gap-2 rounded-md border border-black px-1 py-2 hover:bg-black hover:text-white dark:border-white dark:hover:bg-white dark:hover:text-black lg:w-40 lg:px-3"
 		id="lang-button"
 		aria-label="Change language"
 	>
@@ -67,9 +68,10 @@ const langs = {
 		</svg>
 		{langs[currentLocale as keyof typeof langs].text}
 	</button>
+
 	<ul
 		id="lang-list"
-		class="absolute mt-1 hidden flex-col bg-white p-1 text-sm text-black shadow-lg dark:bg-black dark:text-white"
+		class="absolute mt-1 hidden flex-col bg-white p-1 text-sm text-black shadow-lg dark:bg-emerald-950 dark:text-white"
 	>
 		{
 			Object.entries(langs).map(([lang, { text }]) => {
@@ -80,7 +82,7 @@ const langs = {
 								id="lang"
 								aria-label={`Change language to ${text}`}
 								value={lang}
-								class="w-40 rounded-md px-3 py-2 text-start hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black"
+								class="rounded-md px-3 py-2 text-start hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black lg:w-40"
 							>
 								{text}
 							</button>
