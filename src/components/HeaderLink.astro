@@ -8,7 +8,7 @@ const { href, class: className, ...props } = Astro.props;
 const link = href as string;
 
 const { pathname } = Astro.url;
-const isActive = pathname.split('/')[2] === link;
+const isActive = pathname.split('/')[2] === link.split('/')[2];
 ---
 
 <a
