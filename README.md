@@ -7,6 +7,8 @@ Feito com:
 - [Astro](https://astro.build/), utilizando o template para blog como base.
 - [Tailwind CSS](https://tailwindcss.com/)
 
+![Uma imagem mostrando todos os scores do lighthouse com pontuação de 100](./public/100.png)
+
 ## Como criar um projeto no site
 
 ### Informações gerais
