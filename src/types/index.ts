@@ -22,3 +22,13 @@ export type LocaleDict = {
 		conferences: string;
 	};
 };
+
+export type MdFrontmatter = {
+	title: string;
+	description: string;
+	externalLinks?: Array<{
+		name: string;
+		url: string;
+	}>;
+	heroImage?: string;
+};

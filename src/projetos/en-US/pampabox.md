@@ -1,7 +1,7 @@
 ---
 title: 'PampaBox'
 description: 'PampaBox transforms seized TV Boxes into educational tools via Linux, offering internet access and educational content.'
-links: [{ name: 'Github', url: 'https://github.com/lopesvictor1/PampaBox' }]
+externalLinks: [{ name: 'Github', url: 'https://github.com/lopesvictor1/PampaBox' }]
 heroImage: '/images.webp'
 ---
 

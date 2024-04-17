@@ -1,5 +1,6 @@
 ---
 import ProjetoPageLayout from '@layouts/ProjetoPageLayout.astro';
+import type { MdFrontmatter } from '@src/types';
 import type { MarkdownInstance } from 'astro';
 
 export async function getStaticPaths() {
@@ -31,6 +32,6 @@ const projeto = Astro.props;
 const { Content } = projeto;
 ---
 
-<ProjetoPageLayout {...projeto.frontmatter}>
+<ProjetoPageLayout {...projeto.frontmatter as MdFrontmatter}>
 	<Content />
 </ProjetoPageLayout>

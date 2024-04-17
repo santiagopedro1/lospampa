@@ -1,12 +1,11 @@
 ---
-import type { MarkdownInstance } from 'astro';
-
 import LinkButton from '@components/LinkButton.astro';
 import Layout from '@layouts/Layout.astro';
+import type { MdFrontmatter } from '@src/types';
 
-type Props = MarkdownInstance<Record<string, any>>['frontmatter'];
+type Props = MdFrontmatter;
 
-const { title, description, links, heroImage } = Astro.props;
+const { title, description, externalLinks, heroImage } = Astro.props;
 ---
 
 <Layout>
@@ -26,16 +25,18 @@ const { title, description, links, heroImage } = Astro.props;
 			<h1 class="text-8xl font-bold">{title}</h1>
 			<p>{description}</p>
 			<hr />
-			<div class="flex gap-8">
-				{
-					links?.map(({ name, url }: { name: string; url: string }) => (
-						<LinkButton
-							name={name}
-							url={url}
-						/>
-					))
-				}
-			</div>
+			{
+				externalLinks && (
+					<div class="flex gap-8">
+						{externalLinks.map(({ name, url }) => (
+							<LinkButton
+								name={name}
+								url={url}
+							/>
+						))}
+					</div>
+				)
+			}
 		</div>
 		<div class="prose prose-xl prose-neutral px-12 dark:prose-invert">
 			<slot />
