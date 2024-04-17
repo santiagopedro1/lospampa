@@ -16,10 +16,10 @@ const { t } = Astro.locals;
 		/>
 		<div>
 			<h1 class="text-center text-4xl">{t.hero.title}</h1>
-			<p class="hidden text-center text-gray-500 lg:block">
+			<p class="hidden text-center lg:block">
 				{t.hero.sub}
 			</p>
-			<p class="text-center text-gray-500 lg:hidden">
+			<p class="text-center lg:hidden">
 				{t.hero.sub.split(' | ')[0]}
 				<br />
 				{t.hero.sub.split(' | ')[1]}

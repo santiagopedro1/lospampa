@@ -36,7 +36,6 @@ const { t } = Astro.locals;
 		<button
 			class="justify-self-start p-3 lg:hidden"
 			id="nav-button-open"
-			name="nav-button-open"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -66,6 +65,7 @@ const { t } = Astro.locals;
 					y2="18"
 				></line></svg
 			>
+			<span class="s-only">Open navigation menu</span>
 		</button>
 		<a
 			href={getRelativeLocaleUrl(currentLocale, '/', { normalizeLocale: false })}
