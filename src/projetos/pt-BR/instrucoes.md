@@ -1,11 +1,7 @@
-# Los Pampa site
-
-Este é o repositório do site da Los Pampa.
-
-Feito com:
-
-- [Astro](https://astro.build/), utilizando o template para blog como base.
-- [Tailwind CSS](https://tailwindcss.com/)
+---
+title: 'Instruções para criar um projeto no site'
+description: 'Este arquivo contém instruções para criar um projeto no site.'
+---
 
 ## Como criar um projeto no site
 
@@ -19,7 +15,7 @@ Comece sempre com o segundo nível de cabeçalho. Pois o primeiro será o títul
 
 ### Todos os recursos de markdown estão disponíveis
 
-Para mais informações de como utilizar markdown, você pode utilizar o [**cheat sheet**](https://www.markdownguide.org/cheat-sheet/) ou, se quiser ler a [**documentação completa**](https://www.markdownguide.org).
+Para mais informações de como utilizar markdown, você pode utilizar o [**cheat sheet**](https://www.markdownguide.org/cheat-sheet/ "Markdown cheat sheet" target="\_blank") ou, se quiser ler a [**documentação completa**](https://www.markdownguide.org "Markdown guide" target="\_blank").
 
 ### Front Matter
 
