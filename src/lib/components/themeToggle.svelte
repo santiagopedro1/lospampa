@@ -4,7 +4,8 @@
 
 	function toggleTheme() {
 		currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-		document.cookie = `theme=${currentTheme}`;
+		// cookie expires in 1 year
+		document.cookie = `theme=${currentTheme}; path=/; max-age=31536000T`;
 		document.getElementById('app')?.classList.toggle('dark');
 		document.documentElement.classList.toggle('dark');
 	}
