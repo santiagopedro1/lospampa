@@ -23,10 +23,6 @@ async function getProjects(): Promise<Project[]> {
 }
 
 export const GET: RequestHandler = async ({ request }) => {
-	if (import.meta.env.DEV && !request.headers.get('Origin')) {
-		const projects = await getProjects();
-		return json(projects);
-	} else {
-		throw fail(403);
-	}
+	const projects = await getProjects();
+	return json(projects);
 };
