@@ -1,18 +1,21 @@
 <script lang="ts">
 	import '../app.pcss';
 
-	import { LL } from '$lib/i18n/i18n-svelte';
-
 	import ThemeToggle from '$lib/components/themeToggle.svelte';
-	import LangSelect from '$lib/components/langSelect.svelte';
 
 	import { onNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
 
-	import type { LayoutData } from './$types';
-	import { onMount } from 'svelte';
-
-	export let data: LayoutData;
+	const links = [
+		{
+			title: 'projects',
+			href: '/projects'
+		},
+		{
+			title: 'publications',
+			href: '/publications'
+		}
+	];
 
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
@@ -24,23 +27,14 @@
 			});
 		});
 	});
-
-	onMount(() => {
-		if (document.cookie.includes('theme=dark')) {
-			document.documentElement.classList.add('dark');
-		}
-	});
 </script>
 
-<div
-	class="bg-background text-foreground {data.theme === 'dark' ? 'dark' : ''}"
-	id="app"
->
+<div class="bg-background text-foreground">
 	<header class="px-8">
 		<div class="grid grid-cols-3 px-12 py-2">
 			{#if $page.url.pathname !== '/'}
 				<a
-					href="/"
+					href={'/'}
 					class="justify-self-start px-4 py-2"
 					id="logo"
 				>
@@ -56,22 +50,21 @@
 			{/if}
 
 			<nav
-				class="flex items-center justify-center justify-self-center rounded-full border bg-card px-4"
+				class="flex items-center justify-center justify-self-center rounded-full bg-card px-4 shadow-md"
 			>
-				{#each Object.entries($LL.LINKS) as [_, { title, href }]}
+				{#each links as { title, href }}
 					<a
-						href={href()}
-						class="px-4 py-2 font-bold capitalize hover:underline {$page.route.id?.includes(href())
-							? 'border-b border-primary text-primary'
+						{href}
+						class="px-4 py-2 font-bold capitalize hover:underline {$page.route.id?.includes(href)
+							? 'text-primary'
 							: ''}"
 					>
-						{title()}
+						{title}
 					</a>
 				{/each}
 			</nav>
 			<div class="flex items-center gap-4 justify-self-end">
-				<ThemeToggle currentTheme={data.theme} />
-				<LangSelect currentLocale={data.locale} />
+				<ThemeToggle />
 			</div>
 		</div>
 	</header>

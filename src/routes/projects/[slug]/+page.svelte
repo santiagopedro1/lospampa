@@ -16,9 +16,20 @@
 	/>
 </svelte:head>
 
+<img
+	src={data.meta.coverImage}
+	alt=""
+	style={`view-transition-name: ${data.meta.title}-cover;`}
+	class="mx-auto w-full lg:w-2/3"
+/>
+
 <hgroup>
-	<h1>{data.meta.title}</h1>
-	<p>{data.meta.description}</p>
+	<h1 style={`view-transition-name: ${data.meta.title}-title;`}>
+		{data.meta.title}
+	</h1>
+	<p style={`view-transition-name: ${data.meta.title}-description;`}>
+		{data.meta.description}
+	</p>
 </hgroup>
 
 <div>

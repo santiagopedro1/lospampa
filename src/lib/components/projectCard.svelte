@@ -5,18 +5,29 @@
 	export let projeto: Project;
 </script>
 
-<a href={'/projects/' + projeto.slug}>
+<a href={'projects/' + projeto.slug}>
 	<Card.Root>
 		<Card.Header>
 			<img
 				src={projeto.coverImage}
 				alt={projeto.title}
 				class="w-full"
+				style={`view-transition-name: ${projeto.title}-cover;`}
 			/>
-			<Card.Title class="text-4xl text-primary">{projeto.title}</Card.Title>
+			<Card.Title
+				class="text-4xl"
+				style={`view-transition-name: ${projeto.title}-title;`}
+			>
+				{projeto.title}
+			</Card.Title>
 		</Card.Header>
 		<Card.Content>
-			<p class="h-[72px] text-base">{projeto.description}</p>
+			<p
+				class="h-[72px] text-base"
+				style={`view-transition-name: ${projeto.title}-description;`}
+			>
+				{projeto.description}
+			</p>
 		</Card.Content>
 	</Card.Root>
 </a>
