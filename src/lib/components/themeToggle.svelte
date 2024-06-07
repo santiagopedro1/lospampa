@@ -11,7 +11,7 @@
 <Button
 	variant="outline"
 	size="icon"
-	class="bg-card"
+	class="rounded-full bg-card"
 	on:click={toggleTheme}
 >
 	<svg

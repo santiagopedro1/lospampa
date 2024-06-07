@@ -14,7 +14,7 @@
 	<Card.Root class="border-2 transition-colors duration-200 group-hover:border-primary">
 		<Card.Header>
 			<Card.Title class="capitalize">{title}</Card.Title>
-			<Card.Description>{description}</Card.Description>
+			<Card.Description class="h-14">{description}</Card.Description>
 		</Card.Header>
 		<Card.Content>
 			<Button class="gap-2">

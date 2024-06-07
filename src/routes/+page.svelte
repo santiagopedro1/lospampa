@@ -62,7 +62,7 @@
 		</p>
 	</section>
 
-	<div class="flex gap-8">
+	<div class="flex items-center gap-3 lg:gap-8">
 		{#each links as { title, href, description }}
 			<LinkCard
 				{title}

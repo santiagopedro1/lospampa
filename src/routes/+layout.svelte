@@ -30,12 +30,12 @@
 </script>
 
 <div class="bg-background text-foreground">
-	<header class="px-8">
-		<div class="grid grid-cols-3 px-12 py-2">
+	<header class="px-1 lg:px-8">
+		<div class="flex items-center justify-between py-2 lg:px-12">
 			{#if $page.url.pathname !== '/'}
 				<a
 					href={'/'}
-					class="justify-self-start px-4 py-2"
+					class="px-4 py-2"
 					id="logo"
 				>
 					<img
@@ -46,12 +46,10 @@
 					/>
 				</a>
 			{:else}
-				<div class="h-12 w-16 justify-self-start px-4 py-2"></div>
+				<div class="h-12 w-16 px-4 py-2"></div>
 			{/if}
 
-			<nav
-				class="flex items-center justify-center justify-self-center rounded-full bg-card px-4 shadow-md"
-			>
+			<nav class="flex items-center justify-center rounded-full bg-card px-4 shadow-md">
 				{#each links as { title, href }}
 					<a
 						{href}
@@ -63,12 +61,12 @@
 					</a>
 				{/each}
 			</nav>
-			<div class="flex items-center gap-4 justify-self-end">
+			<div class="flex items-center gap-4">
 				<ThemeToggle />
 			</div>
 		</div>
 	</header>
-	<div class="mx-auto min-h-screen px-24 py-16">
+	<div class="mx-auto min-h-screen px-4 py-16 lg:px-24">
 		<slot></slot>
 	</div>
 </div>
