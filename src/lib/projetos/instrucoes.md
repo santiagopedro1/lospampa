@@ -26,17 +26,4 @@ The Front Matter is the part of the file that contains information about the pro
 
 - description: This is a brief description of the project. It is useful to provide a quick overview of the project content. The description is used in the list of projects and just below the project title on its page.
 
-- externalLinks (optional): This field can contain relevant external links for the project, such as other websites or social networks. This field is optional and may or may not be included, depending on the project's needs. The typing of externalLinks is as follows:
-
-```javascript
-ExternalLinks = {
-    name: string;
-    url: string;
-};
-```
-
-Where `name` is the name of the link and `url` is the address of the link.
-
-We have icons for the following types of external links: `app-store`, `discord`, `facebook`, `github`, `gitlab`, `instagram`, `play-store`.
-
-- heroImage (optional): This field can contain an image that will be displayed in the header of the project page. The image must be hosted on the site and the path to the image must be provided. This field is optional and may or may not be included, depending on the project's needs.
+- coverImage (optional): This field can contain an image that will be displayed in the header of the project page. The image must be hosted on the site and the path to the image must be provided. This field is optional and may or may not be included, depending on the project's needs.
