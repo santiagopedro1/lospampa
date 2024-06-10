@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>Our publications - LOS Unipampa</title>
+	<title>Publications - LOS Unipampa</title>
 </svelte:head>
 
 <main class="space-y-10">
