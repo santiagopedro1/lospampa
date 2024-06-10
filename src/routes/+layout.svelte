@@ -66,7 +66,7 @@
 			</div>
 		</div>
 	</header>
-	<div class="mx-auto min-h-screen px-4 py-16 lg:px-24">
+	<div class="container py-16 lg:px-24">
 		<slot></slot>
 	</div>
 </div>

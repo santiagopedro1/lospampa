@@ -1,4 +1,5 @@
 <script lang="ts">
+	import PublicationCard from '$lib/components/publicationCard.svelte';
 	import { publications } from '$lib/publications';
 </script>
 
@@ -6,34 +7,25 @@
 	<title>Our publications - LOS Unipampa</title>
 </svelte:head>
 
-<main class="space-y-12">
+<main class="space-y-10">
 	<h1>Our publications</h1>
 
-	<div>
-		<h2>Journals</h2>
-		<div class="prose dark:prose-invert lg:prose-lg">
-			<ul>
+	<div class="container">
+		<div class="space-y-4">
+			<h2>Journals</h2>
+			<div class="space-y-8">
 				{#each publications.journal as item}
-					<li>
-						{item.who.join('; ')} <span class="font-extrabold text-foreground">{item.title}</span>
-						<span class="italic">{item.where}</span>
-					</li>
+					<PublicationCard {...item} />
 				{/each}
-			</ul>
+			</div>
 		</div>
-	</div>
-
-	<div>
-		<h2>Conferences</h2>
-		<div class="prose dark:prose-invert lg:prose-lg">
-			<ul>
+		<div class="space-y-4">
+			<h2>Conferences</h2>
+			<div class="space-y-8">
 				{#each publications.conference as item}
-					<li>
-						{item.who} <span class="font-extrabold text-foreground">{item.title}</span>
-						<span class="italic">{item.where}</span>
-					</li>
+					<PublicationCard {...item} />
 				{/each}
-			</ul>
+			</div>
 		</div>
 	</div>
 </main>
