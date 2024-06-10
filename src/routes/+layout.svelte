@@ -31,11 +31,11 @@
 
 <div class="bg-background text-foreground">
 	<header class="px-1 lg:px-8">
-		<div class="flex items-center justify-between py-2 lg:px-12">
+		<div class="flex items-center justify-around py-2 lg:px-12">
 			{#if $page.url.pathname !== '/'}
 				<a
 					href={'/'}
-					class="px-4 py-2"
+					class="object-fill p-2"
 					id="logo"
 				>
 					<img
@@ -43,18 +43,21 @@
 						alt=""
 						width={32}
 						height={32}
+						class="size-8"
 					/>
 				</a>
 			{:else}
-				<div class="h-12 w-16 px-4 py-2"></div>
+				<div class="size-12"></div>
 			{/if}
 
 			<nav class="flex items-center justify-center rounded-full bg-card px-4 shadow-md">
 				{#each links as { title, href }}
+					{@const active = $page.url.pathname === href ? 'page' : null}
 					<a
+						aria-current={active}
 						{href}
-						class="px-4 py-2 font-bold capitalize hover:underline {$page.route.id?.includes(href)
-							? 'text-primary'
+						class="px-4 py-2 font-bold capitalize hover:underline {active
+							? 'pointer-events-none text-primary hover:no-underline'
 							: ''}"
 					>
 						{title}
@@ -66,7 +69,7 @@
 			</div>
 		</div>
 	</header>
-	<div class="container py-16 lg:px-24">
+	<div class="container py-8 lg:px-24">
 		<slot></slot>
 	</div>
 </div>

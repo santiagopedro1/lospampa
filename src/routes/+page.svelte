@@ -62,7 +62,7 @@
 		</p>
 	</section>
 
-	<div class="grid grid-cols-2 items-center gap-3 lg:gap-8">
+	<div class="grid items-center gap-1 lg:grid-cols-2 lg:gap-8">
 		{#each links as { title, href, description }}
 			<LinkCard
 				{title}

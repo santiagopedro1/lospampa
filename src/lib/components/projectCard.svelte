@@ -14,18 +14,12 @@
 				class="w-full"
 				style={`view-transition-name: ${projeto.title}-cover;`}
 			/>
-			<Card.Title
-				class="text-4xl"
-				style={`view-transition-name: ${projeto.title}-title;`}
-			>
+			<Card.Title class="text-4xl">
 				{projeto.title}
 			</Card.Title>
 		</Card.Header>
 		<Card.Content>
-			<p
-				class="h-[72px] text-base"
-				style={`view-transition-name: ${projeto.title}-description;`}
-			>
+			<p class="h-[72px] text-base">
 				{projeto.description}
 			</p>
 		</Card.Content>
