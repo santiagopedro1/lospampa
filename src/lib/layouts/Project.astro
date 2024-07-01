@@ -1,0 +1,42 @@
+---
+import DefaultLayout from './Default.astro';
+
+import type { CollectionEntry } from 'astro:content';
+
+type Props = CollectionEntry<'projects'>['data'];
+
+const { title, description, heroImage } = Astro.props;
+---
+
+<DefaultLayout titleAppend={title}>
+	<article class="space-y-8">
+		<div class="grid place-items-center gap-4">
+			{
+				heroImage && (
+					<img
+						width={800}
+						src={heroImage}
+						alt=""
+						transition:name={'hero-' + title}
+					/>
+				)
+			}
+			<hgroup class="space-y-4">
+				<h1 class="text-center text-7xl">
+					{title}
+				</h1>
+				<p class="text-center text-lg">
+					{description}
+				</p>
+			</hgroup>
+		</div>
+
+		<hr class="border-primary" />
+
+		<div
+			class="prose mx-auto dark:prose-invert md:prose-lg prose-headings:text-foreground prose-p:text-foreground prose-a:text-primary prose-strong:text-primary prose-li:text-foreground"
+		>
+			<slot />
+		</div>
+	</article>
+</DefaultLayout>

@@ -1,0 +1,28 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'a'>;
+
+const { href } = Astro.props;
+
+const { pathname } = Astro.url;
+const subpath = pathname.match(/[^\/]+/g);
+const isActive = href === pathname || href === '/' + subpath?.[0];
+---
+
+<div>
+	<a
+		{href}
+		class:list={[
+			isActive && 'text-primary',
+			'block px-4 py-2 text-center text-lg font-bold capitalize duration-75 hover:text-primary'
+		]}
+		aria-current={isActive ? 'page' : undefined}
+	>
+		<slot />
+	</a>
+	<hr
+		class:list={['border-2 border-transparent', isActive && '!border-primary']}
+		transition:name={isActive ? 'current' : ''}
+	/>
+</div>

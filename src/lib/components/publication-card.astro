@@ -1,0 +1,23 @@
+---
+import * as Card from '$lib/components/ui/card';
+
+interface Props {
+	publication: {
+		title: string;
+		where: string;
+		who: Array<string>;
+	};
+}
+
+const { title, where, who } = Astro.props.publication;
+---
+
+<Card.Root>
+	<Card.Header>
+		<Card.Title>{title}</Card.Title>
+		<Card.Description>{where}</Card.Description>
+	</Card.Header>
+	<Card.Content>
+		<p>Authors: {who.join('; ')}</p>
+	</Card.Content>
+</Card.Root>

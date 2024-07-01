@@ -1,0 +1,32 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+
+import { SITE_DESCRIPTION } from '$lib/consts';
+
+import BaseHead from '$lib/components/BaseHead.astro';
+import Header from '$lib/components/Header.astro';
+
+interface Props {
+	titleAppend?: string;
+	image?: string;
+}
+
+const { titleAppend } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead
+			titleAppend={titleAppend}
+			description={SITE_DESCRIPTION}
+		/>
+		<ViewTransitions />
+	</head>
+	<body>
+		<Header />
+		<main class="container mx-auto space-y-10 pb-8">
+			<slot />
+		</main>
+	</body>
+</html>

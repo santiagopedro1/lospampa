@@ -1,0 +1,41 @@
+---
+import * as Card from './ui/card';
+
+interface Props {
+	data: {
+		title: string;
+		description: string;
+		heroImage?: string;
+	};
+	slug: string;
+}
+
+const { data, slug } = Astro.props;
+---
+
+<a
+	href={'projects/' + slug}
+	class="block rounded-xl shadow-xl outline outline-transparent transition-all duration-300 hover:outline-primary"
+>
+	<Card.Root>
+		<Card.Header class="p-0">
+			<img
+				src={data.heroImage}
+				alt={data.title}
+				class="w-full rounded-t-xl"
+				transition:name={'hero-' + data.title}
+			/>
+			<Card.Title
+				tag="h2"
+				class="p-6 text-4xl"
+			>
+				{data.title}
+			</Card.Title>
+		</Card.Header>
+		<Card.Content>
+			<p class="h-20 text-base">
+				{data.description}
+			</p>
+		</Card.Content>
+	</Card.Root>
+</a>
