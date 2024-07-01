@@ -1,0 +1,24 @@
+---
+import Default from '$lib/layouts/Default.astro';
+import { publications } from '$lib/publications';
+import PublicationCard from '$lib/components/publication-card.astro';
+---
+
+<Default titleAppend="Publications">
+	<h1>Our publications</h1>
+
+	<div class="container space-y-10">
+		<div class="space-y-4">
+			<h2>Journals</h2>
+			<div class="space-y-8">
+				{publications.journal.map((publication) => <PublicationCard {publication} />)}
+			</div>
+		</div>
+		<div class="space-y-4">
+			<h2>Conferences</h2>
+			<div class="space-y-8">
+				{publications.conference.map((publication) => <PublicationCard {publication} />)}
+			</div>
+		</div>
+	</div>
+</Default>

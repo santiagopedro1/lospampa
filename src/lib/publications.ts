@@ -1,14 +1,7 @@
 export const publications = {
 	journal: [
 		{
-			who: [
-				'BERNED, G. P.',
-				'ROSSI, F. D.',
-				'LUIZELLI, M. C.',
-				'DE SOUZA, S. X.',
-				'BECK, A. C. S.',
-				'LORENZON, A. F.'
-			],
+			who: ['BERNED, G. P.', 'ROSSI, F. D.', 'LUIZELLI, M. C.', 'DE SOUZA, S. X.', 'BECK, A. C. S.', 'LORENZON, A. F.'],
 			where: 'Journal of Systems Architecture , v. x, p., 2020.',
 			title: 'Low learning-cost offline strategies for EDP optimization of parallel applications.'
 		},
@@ -38,8 +31,7 @@ export const publications = {
 				'XAVIER-DE-SOUZA, S.'
 			],
 			where: 'Energies , v. 13, p. 1, 2020.',
-			title:
-				'Performance and Energy Trade-Offs for Parallel Applications on Heterogeneous Multi-Processing.'
+			title: 'Performance and Energy Trade-Offs for Parallel Applications on Heterogeneous Multi-Processing.'
 		},
 		{
 			who: [
@@ -66,10 +58,8 @@ export const publications = {
 				'TURCK, F.',
 				'GASPARY, L. P.'
 			],
-			where:
-				'ACM Transactions on Multimedia Computing Communications and Applications , v. 1, p. 1, 2019.',
-			title:
-				'Dissecting the Performance of VR Video Streaming Through the VR-EXP Experimentation Platform.'
+			where: 'ACM Transactions on Multimedia Computing Communications and Applications , v. 1, p. 1, 2019.',
+			title: 'Dissecting the Performance of VR Video Streaming Through the VR-EXP Experimentation Platform.'
 		},
 		{
 			who: [
@@ -86,14 +76,7 @@ export const publications = {
 			title: 'Data clustering for efficient approximate computing.'
 		},
 		{
-			who: [
-				'VOGT, F. G.',
-				'HOHEMBERGER, R.',
-				'MANSILHA, R.',
-				'LORENZON, A. F.',
-				'ROSSI, F. D.',
-				'LUIZELLI, M. C.'
-			],
+			who: ['VOGT, F. G.', 'HOHEMBERGER, R.', 'MANSILHA, R.', 'LORENZON, A. F.', 'ROSSI, F. D.', 'LUIZELLI, M. C.'],
 			where: 'IEEE Communications Letters, v. 23, p. 20-25, 2019.',
 			title: 'Orchestrating In-Band Data Plane Telemetry with Machine Learning.'
 		},
@@ -124,8 +107,7 @@ export const publications = {
 			who: ['HOHEMBERGER, R.', 'LORENZON, A. F.', 'ROSSI, F. D.', 'LUIZELLI, M. C.'],
 			where:
 				'The 34-th International Conference on Advanced Information Networking and Applications (AINA-2020) Caserta, Italy, 2020. p. 1-8.',
-			title:
-				'A Heuristic Approach for Large-Scale Orchestration of the In-Band Data Plane Telemetry Problem.'
+			title: 'A Heuristic Approach for Large-Scale Orchestration of the In-Band Data Plane Telemetry Problem.'
 		},
 		{
 			who: ['BERNED, G.', 'LUIZELLI, M. C.', 'ROSSI, F. D.', 'BECK, A. C. S.', 'LORENZON, A. F.'],
@@ -150,8 +132,7 @@ export const publications = {
 				'LUIZELLI, M. C.',
 				'ROSSI, F. D.'
 			],
-			where:
-				'International Conference on Information Networking (ICOIN), Barcelona – Spain, 2020. p. 1-6.',
+			where: 'International Conference on Information Networking (ICOIN), Barcelona – Spain, 2020. p. 1-6.',
 			title: 'Low-Cost Fog Computing Platform for Soil Moisture Management.'
 		},
 		{
@@ -165,18 +146,11 @@ export const publications = {
 				'LUIZELLI, M. C.',
 				'ROSSI, F. D.'
 			],
-			where:
-				'International Conference on Information Networking (ICOIN), Barcelona – Spain, 2020. p. 1-6.',
+			where: 'International Conference on Information Networking (ICOIN), Barcelona – Spain, 2020. p. 1-6.',
 			title: 'Towards Elasticity for SME Cloud Services.'
 		},
 		{
-			who: [
-				'MEDEIROS, T. S.',
-				'ROSSI, F. D.',
-				'LUIZELLI, M. C.',
-				'BECK, A. C. S.',
-				'LORENZON, A. F.'
-			],
+			who: ['MEDEIROS, T. S.', 'ROSSI, F. D.', 'LUIZELLI, M. C.', 'BECK, A. C. S.', 'LORENZON, A. F.'],
 			where:
 				'International Symposium on Computer Architecture and High Performance Computing (SBAC-PAD), Campo Grande – Brazil, 2019. p. 1-6.',
 			title: 'Transparent Aging-Aware Thread Throttling.'
@@ -193,8 +167,7 @@ export const publications = {
 			],
 			where:
 				'IFIP/IEEE International Conference on Very Large Scale Integration , Cusco-Peru. NY, USA: IEEE, 2019. p. 1-6.',
-			title:
-				'The Impact of Turbo Frequency on the Energy, Performance, and Aging of Parallel Applications.'
+			title: 'The Impact of Turbo Frequency on the Energy, Performance, and Aging of Parallel Applications.'
 		},
 		{
 			who: [
@@ -206,31 +179,19 @@ export const publications = {
 				'FERRETO, T. C.',
 				'ROSSI, F. D.'
 			],
-			where:
-				'International Symposium on Computers and Communications (ISCC) . NY, USA: IEEE, 2019. p. 1-6.',
-			title:
-				'Multilevel Resource Allocation for Performance-Aware Energy-Efficient Cloud Data Centers.'
+			where: 'International Symposium on Computers and Communications (ISCC) . NY, USA: IEEE, 2019. p. 1-6.',
+			title: 'Multilevel Resource Allocation for Performance-Aware Energy-Efficient Cloud Data Centers.'
 		},
 		{
 			who: ['CONTERATO, M.', 'FERRETO, T. C.', 'ROSSI, F. D.', 'MARQUES, W. S.', 'SEVERO, P. S.'],
 			where:
 				'Proceedings of the 34th ACM/SIGAPP Symposium on Applied Computing – SAC ’19. New York: ACM Press, 2019. p. 1384.',
-			title:
-				'Reducing energy consumption in SDN-based data center networks through flow consolidation strategies.'
+			title: 'Reducing energy consumption in SDN-based data center networks through flow consolidation strategies.'
 		},
 		{
-			who: [
-				'SCHWARZROCK, J.',
-				'JORDAN, M. G.',
-				'KOROL, G.',
-				'OLIVEIRA, C. C.',
-				'LORENZON, A. F.',
-				'BECK, A. C. S.'
-			],
-			where:
-				'Brazilian Symposium on Computing Systems Engineering (SBESC), Natal-RN. Brazil. NY: IEEE, 2019. p. 1-8.',
-			title:
-				'On the influence of Data Migration in Dynamic Thread Management of Parallel Applications.'
+			who: ['SCHWARZROCK, J.', 'JORDAN, M. G.', 'KOROL, G.', 'OLIVEIRA, C. C.', 'LORENZON, A. F.', 'BECK, A. C. S.'],
+			where: 'Brazilian Symposium on Computing Systems Engineering (SBESC), Natal-RN. Brazil. NY: IEEE, 2019. p. 1-8.',
+			title: 'On the influence of Data Migration in Dynamic Thread Management of Parallel Applications.'
 		},
 		{
 			who: [
@@ -246,8 +207,7 @@ export const publications = {
 				'NONAKA, J.'
 			],
 			where: 'IEEE International Symposium on Circuits and Systems (ISCAS). 2019. p. 1-5.',
-			title:
-				'The Impact of Parallel Programming Interfaces on the Aging of a Multicore Embedded Processor.'
+			title: 'The Impact of Parallel Programming Interfaces on the Aging of a Multicore Embedded Processor.'
 		},
 		{
 			who: ['BASAT, R. B.', 'EINZIGER, GIL', 'LUIZELLI, M. C.', 'WAISBARD, E.'],

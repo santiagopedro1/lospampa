@@ -1,0 +1,49 @@
+---
+import * as Card from '$lib/components/ui/card';
+import { Button } from './ui/button';
+
+interface Props {
+	linkInfo: {
+		title: string;
+		description: string;
+		href: string;
+	};
+}
+
+const { title, description, href } = Astro.props.linkInfo;
+---
+
+<a
+	{href}
+	class="group"
+>
+	<Card.Root class="outline outline-transparent transition-all duration-300 group-hover:outline-primary">
+		<Card.Header>
+			<Card.Title
+				class="capitalize"
+				tag="h2"
+				>{title}</Card.Title
+			>
+			<Card.Description>{description}</Card.Description>
+		</Card.Header>
+		<Card.Content>
+			<Button class="gap-2">
+				See more
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+				>
+					<path d="M5 12h14"></path>
+					<path d="m12 5 7 7-7 7"></path>
+				</svg>
+			</Button>
+		</Card.Content>
+	</Card.Root>
+</a>
