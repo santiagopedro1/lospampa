@@ -13,8 +13,8 @@
 		--popover: 33 43% 91%;
 		--popover-foreground: 248 19% 40%;
 
-		--primary: 142 76% 36%;
-		--primary-foreground: 245 50% 91%;
+		--primary: 109 59% 43%;
+		--primary-foreground: 0 0% 0%;
 
 		--secondary: 240 4.8% 95.9%;
 		--secondary-foreground: 245 50% 91%;
@@ -32,22 +32,23 @@
 
 		--input: 240 5.9% 90%;
 
-		--ring: 142 76% 36%;
+		--ring: 109 59% 43%;
 
 		--radius: 0.5rem;
 	}
+
 	.dark {
-		--background: 249 22% 12%;
+		--background: 248 24% 20%;
 		--foreground: 245 50% 91%;
 
-		--card: 247 23% 15%;
+		--card: 248 21% 26%;
 		--card-foreground: 245 50% 91%;
 
 		--popover: 248 25% 18%;
 		--popover-foreground: 245 50% 91%;
 
-		--primary: 142.1 70.6% 45.3%;
-		--primary-foreground: 245 50% 91%;
+		--primary: 109 59% 43%;
+		--primary-foreground: 0 0% 0%;
 
 		--secondary: 240 3.7% 15.9%;
 		--secondary-foreground: 0 0% 98%;
@@ -100,6 +101,7 @@
 	::-webkit-scrollbar-track {
 		@apply !bg-muted;
 	}
+
 	::-webkit-scrollbar-thumb {
 		@apply rounded-sm !bg-muted-foreground/30;
 	}
